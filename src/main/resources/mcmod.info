@@ -1,8 +1,8 @@
 [
   {
     "modid": "${modid}",
-    "name": "Xample Mod",
-    "description": "A mod that is used as an example.",
+    "name": "Tablet Mode",
+    "description": "Simple mod so tablet absolute mode works properly.",
     "version": "${version}",
     "mcversion": "${mcversion}",
     "url": "https://github.com/romangraef/Forge1.8.9Template/",

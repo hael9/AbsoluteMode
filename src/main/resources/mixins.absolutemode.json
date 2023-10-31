@@ -6,6 +6,6 @@
   "mixins": [
   ],
   "client": [
-	"MixinGuiMainMenu"
+	"MixinMouseHelper"
   ]
 }
