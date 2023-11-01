@@ -14,7 +14,7 @@ public class ToggleCommand extends CommandBase implements ICommand {
 
     @Override
     public String getCommandName() {
-        return "tabletmode";
+        return "absolutemode";
     }
 
     @Override
@@ -36,7 +36,7 @@ public class ToggleCommand extends CommandBase implements ICommand {
         if (args[0].toLowerCase(Locale.ROOT).contains("toggle")) AbsoluteMode.toggled = !AbsoluteMode.toggled;
         if (args[0].toLowerCase(Locale.ROOT).contains("xsens")) {
             if (args.length < 2) {
-                Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText("Specify a sens"));
+                Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText("Specify a sens, ex: 1.1"));
                 return;
             }
             try {
@@ -47,7 +47,7 @@ public class ToggleCommand extends CommandBase implements ICommand {
         }
         if (args[0].toLowerCase(Locale.ROOT).contains("ysens")) {
             if (args.length < 2) {
-                Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText("Specify a sens"));
+                Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText("Specify a sens, ex: 1.1"));
                 return;
             }
             try {
