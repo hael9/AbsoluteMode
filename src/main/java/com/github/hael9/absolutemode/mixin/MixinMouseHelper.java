@@ -26,8 +26,8 @@ public class MixinMouseHelper {
     public void onMouseXYChange(CallbackInfo ci) {
         if (!AbsoluteMode.toggled) return;
 
-        int dX = (int)((double) Mouse.getDX() * AbsoluteMode.sensitivity);
-        int dY = (int)((double) Mouse.getDY() * AbsoluteMode.sensitivity);
+        int dX = (int)((double) Mouse.getDX() * AbsoluteMode.xSensitivity);
+        int dY = (int)((double) Mouse.getDY() * AbsoluteMode.ySensitivity);
 
         // were not moving, 0 - lastPos = some wack number
         if (dX != 0 && lastX != 0) this.deltaX = dX - lastX;

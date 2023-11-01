@@ -30,17 +30,28 @@ public class ToggleCommand extends CommandBase implements ICommand {
     @Override
     public void processCommand(ICommandSender sender, String[] args) throws CommandException {
         if (args.length < 1) {
-            Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText("Use /tabletmode toggle/sens"));
+            Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText("Use /tabletmode toggle/xsens/ysens"));
             return;
         }
         if (args[0].toLowerCase(Locale.ROOT).contains("toggle")) AbsoluteMode.toggled = !AbsoluteMode.toggled;
-        if (args[0].toLowerCase(Locale.ROOT).contains("sens")) {
+        if (args[0].toLowerCase(Locale.ROOT).contains("xsens")) {
             if (args.length < 2) {
                 Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText("Specify a sens"));
                 return;
             }
             try {
-                AbsoluteMode.sensitivity = Double.parseDouble(args[1]);
+                AbsoluteMode.xSensitivity = Double.parseDouble(args[1]);
+            } catch (Exception e) {
+                Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText("Could not parse value"));
+            }
+        }
+        if (args[0].toLowerCase(Locale.ROOT).contains("ysens")) {
+            if (args.length < 2) {
+                Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText("Specify a sens"));
+                return;
+            }
+            try {
+                AbsoluteMode.ySensitivity = Double.parseDouble(args[1]);
             } catch (Exception e) {
                 Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText("Could not parse value"));
             }

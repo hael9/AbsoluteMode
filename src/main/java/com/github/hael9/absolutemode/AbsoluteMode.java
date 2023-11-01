@@ -14,7 +14,8 @@ public class AbsoluteMode {
     public static boolean toggled = true;
     public static int lastX = 0;
     public static int lastY = 0;
-    public static double sensitivity = 1;
+    public static double xSensitivity = 1;
+    public static double ySensitivity = 1;
     public static File configFile;
 
     @Mod.EventHandler
@@ -36,7 +37,7 @@ public class AbsoluteMode {
     }
 
     public static void updateConfig() throws IOException {
-        String str = sensitivity + "," + toggled;
+        String str = xSensitivity + "," + ySensitivity + "," + toggled;
         FileOutputStream fos = new FileOutputStream(configFile);
         IOUtils.write(str, fos);
         fos.close();
@@ -46,8 +47,9 @@ public class AbsoluteMode {
         FileInputStream fis = new FileInputStream(configFile);
         String str = IOUtils.toString(fis);
         String[] line = str.split(",");
-        sensitivity = Double.parseDouble(line[0]);
-        toggled = Boolean.parseBoolean(line[1]);
+        xSensitivity = Double.parseDouble(line[0]);
+        ySensitivity = Double.parseDouble(line[1]);
+        toggled = Boolean.parseBoolean(line[2]);
         fis.close();
     }
 }
